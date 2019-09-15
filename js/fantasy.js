@@ -9,7 +9,7 @@ $.ajaxPrefilter( function (options) {
 const getLeagueDataFromFplByLeagueIdAndPageNo = (leagueId, pageNo) => {
   return new Promise((resolve, reject) => {
     $.ajax({
-        url: `https://fantasy.premierleague.com/drf/leagues-classic-standings/${leagueId}?phase=1&le-page=1&ls-page=${pageNo}`,
+        url: `https://fantasy.premierleague.com/api/leagues-classic/${leagueId}/standings/?phase=1&page_standings=${pageNo}`,
         type: 'GET',
         crossDomain: true,
         success: function (data) {
